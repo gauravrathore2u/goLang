@@ -106,7 +106,10 @@ func main() {
 	}
 
 	// the above thing can also done like
-	if lee := 10; lee < 10 {
+	//here we are declaring the variable inside the if block
+	// this will make scope of lee variable limited to if block
+	//eg. if height := getHeight(age); height < 5.0 { ... }
+	if lee := 10; lee < 10 {   
 		fmt.Println("lee is less than 10");
 	} else if lee == 20 {
 		fmt.Println("lee is 20");
