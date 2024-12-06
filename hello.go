@@ -116,4 +116,83 @@ func main() {
 	} else {
 		fmt.Println("lee is not 10 or 20");
 	}
+
+	//Functions
+	//---------------------------------------------------------------------------------------------
+	/*
+	func sub(a int, b int) int {
+		return a - b;
+	}
+	*/
+
+	fmt.Println(sub(10, 20));
+
+	//for same type in arguments we can declare only to the last one
+	/*
+	func sub(a, b int) int {
+		return a - b;
+	}
+	*/
+	fmt.Println(sub1(10, 20));
+
+	//we can return multiple value from a function
+	/*
+	func sub(a, b int) (int, int) {
+		return a - b, a + b;
+	}
+	*/
+	k, m := sub2(10, 20);
+	fmt.Println(k, m);
+
+	//we can ignore the return value using '_'
+	/*
+	func sub(a, b int) (int, int) {
+		return a - b, a + b;
+	}
+	*/
+	_, m = sub2(10, 20);
+	fmt.Println(m);
+
+	//Named return value
+	//returned values may be given name, and if they are, then they are treated the same as 
+	//if they were new variable defined at the top of the function 
+	/*
+	func getCord()(x, y int) {
+		// here x and y are initialized with zero value
+		
+		return; //automatically return x and y
+	}
+	*/
+	// the above code is same as
+	/*
+	func getCord1()(int, int) {
+		var x int = 0;
+		var y int = 0;
+		return x, y;
+	}
+	*/
+	//recommended is to declare the return variable but also return them
+
+
+
+	
+}
+
+func sub(a int, b int) int {
+	return a - b;
+}
+func sub1(a, b int) int {
+	return a - b;
+}
+func sub2(a, b int) (int, int) {
+	return a - b, a + b;
+}
+func getCord()(x, y int) {
+	return;
+}
+
+func getCord1()(int, int) {
+	var x int = 10;
+	var y int = 20;
+	return x, y;
 }
