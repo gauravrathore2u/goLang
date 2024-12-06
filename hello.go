@@ -14,6 +14,7 @@ func main() {
 	fmt.Println("Hello World!");
 
 	//variables
+	//---------------------------------------------------------------------------------------------
 	/*
 	//1. using data type declaration ==> var variableName type = value
 	var x int = 10;
@@ -44,6 +45,8 @@ func main() {
 
 
 	//Sprintf returns the formatted string
+	//---------------------------------------------------------------------------------------------
+
 	var message string = fmt.Sprintf("Name: %s, Age: %d, Is Student: %t", name, age, isStudent);
 	fmt.Println(message);
 
@@ -64,6 +67,8 @@ func main() {
 	*/
 
 	//multi variables declaration
+	//---------------------------------------------------------------------------------------------
+
 	var (
 		a2 int = 10;
 		b2 int = 20;
@@ -77,7 +82,7 @@ func main() {
 	fmt.Println(a, b, c);
 
 
-	// return to variable
+	// redeclare to variable
 	var p int = 10;
 	p = 20;
 	// p = "name"; //error
@@ -88,4 +93,24 @@ func main() {
 	q = 10;
 	t = "name";
 	fmt.Println(q, t);
+
+	//Conditional statements
+	//---------------------------------------------------------------------------------------------
+	pee := 10;
+	if pee == 10 {
+		fmt.Println("pee is 10");
+	} else if pee == 20 {
+		fmt.Println("pee is 20");
+	} else {
+		fmt.Println("pee is not 10 or 20");
+	}
+
+	// the above thing can also done like
+	if lee := 10; lee < 10 {
+		fmt.Println("lee is less than 10");
+	} else if lee == 20 {
+		fmt.Println("lee is 20");
+	} else {
+		fmt.Println("lee is not 10 or 20");
+	}
 }
