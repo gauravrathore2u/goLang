@@ -8,7 +8,10 @@
 
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 
 func main() {
@@ -224,6 +227,8 @@ func main() {
 	an interface is a type that lists methods without providing their code. 
 	You can’t create an instance of an interface directly, but you can make a variable of the interface 
 	type to store any value that has the needed methods.
+	A type implements an interface by by implementing its methods. unlike in other languages,
+	there is no explicit declaration of intent, there is no 'implements' keyword.
 
 	type InterfaceName interface {
     	Method1() returnType
@@ -235,6 +240,22 @@ func main() {
 	s = Rectangle{length: 4, width: 3}
     fmt.Println("R Area:", s.Area())
     fmt.Println("R Perimeter:", s.Perimeter())
+
+
+	//Errors
+	//---------------------------------------------------------------------------------------------
+	//in js we handle errors using try catch
+	//in go we handle errors using error interface, errors.New("error message")
+	//we can return error with return type and check errors where needed
+
+	val, err := divideNum(10, 0);
+	if err != nil {
+		fmt.Println(err);
+		// return;  //we can return here
+	} else {
+		fmt.Println(val);
+	}
+
 	
 }
 
@@ -288,4 +309,11 @@ func (r Rectangle) Area() float64 {
 
 func (r Rectangle) Perimeter() float64 {
 	return 2 * (r.length + r.width)
+}
+
+func divideNum(a, b int) (int, error) {
+	if b == 0 {
+		return 0, errors.New("cannot divide by zero")
+	}
+	return a / b, nil
 }
