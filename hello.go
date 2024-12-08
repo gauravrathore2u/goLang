@@ -8,7 +8,8 @@
 
 package main
 
-import "fmt";
+import "fmt"
+
 
 func main() {
 	fmt.Println("Hello World!");
@@ -214,6 +215,26 @@ func main() {
 	//---------------------------------------------------------------------------------------------
 	p5 := rect{10, 20};
 	fmt.Println(p5.area());
+
+
+
+	//Interface
+	//---------------------------------------------------------------------------------------------
+	/*
+	an interface is a type that lists methods without providing their code. 
+	You can’t create an instance of an interface directly, but you can make a variable of the interface 
+	type to store any value that has the needed methods.
+
+	type InterfaceName interface {
+    	Method1() returnType
+   		Method2() returnType
+	}
+	*/
+
+	var s Shape;
+	s = Rectangle{length: 4, width: 3}
+    fmt.Println("R Area:", s.Area())
+    fmt.Println("R Perimeter:", s.Perimeter())
 	
 }
 
@@ -248,4 +269,23 @@ func getCord1()(int, int) {
 	var x int = 10;
 	var y int = 20;
 	return x, y;
+}
+
+//Interface
+type Shape interface {
+	Area() float64
+	Perimeter() float64
+}
+
+// Rectangle type that implements the Shape interface
+type Rectangle struct {
+	length, width float64
+}
+
+func (r Rectangle) Area() float64 {
+	return r.length * r.width
+}
+
+func (r Rectangle) Perimeter() float64 {
+	return 2 * (r.length + r.width)
 }
