@@ -256,7 +256,35 @@ func main() {
 		fmt.Println(val);
 	}
 
-	
+
+	//Loops
+	//---------------------------------------------------------------------------------------------
+	/*
+		for INITIALIZATION; CONDITION; AFTER {}
+	*/
+	for i := 0; i < 10; i++ {
+		fmt.Println(i);
+	}
+	//Similar to other languages, we can break the loop using break keyword
+	//we can continue the loop using continue keyword
+
+
+	//infiinite loop
+	/*
+	if we don't have any condition then the loop will run forever
+	for INITIALIZATION; ; AFTER {}
+	*/
+
+	//While loop
+	//in go we don't have while loop, we can use for loop with a condition
+	/*
+	for CONDITION {}
+	*/
+	plantHeight := 1;
+	for plantHeight < 10 {
+		fmt.Println("Plant height:", plantHeight)
+		plantHeight++
+	}
 }
 
 type rect struct {
