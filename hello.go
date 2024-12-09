@@ -285,6 +285,58 @@ func main() {
 		fmt.Println("Plant height:", plantHeight)
 		plantHeight++
 	}
+
+
+	//Arrays
+	//---------------------------------------------------------------------------------------------
+	/*
+		arrayName := [5]int{1, 2, 3, 4, 5}
+		[lengthOfArray] datatype {values}
+	*/
+	var nummies = [5] int {1, 2};  // length of array is 5 and initialized with 0
+	fmt.Println(nummies);		// [1 2 0 0 0]
+
+	//Infer length of array
+	//we can also declare array without length
+	var nummies1 = [2] int {1, 2}; // length of array is 2
+	fmt.Println(nummies1);		// [1 2]
+
+	//assign values to certain positions 
+	 nummies2 := [5] int {2: 1, 4: 2} // length of array is 5; and at index 2 value is 1 and at index 4 value is 2
+	 fmt.Println(nummies2);		// [0 0 1 0 2]
+
+	 //Multidimensional array
+	 nummies3 := [2][2]int{{1, 2}, {3, 4}}
+	 fmt.Println(nummies3);		// [[1 2] [3 4]]
+
+
+	 //Slice
+	 //---------------------------------------------------------------------------------------------
+	 /*
+	 slices are similar to array but we don't provide length, it has dynamic length.
+	 we can add or remove elements form slice.
+	 sliceName := []datatype{values}  //in slices we do not provide length
+	 */
+	 var nummies4 = []int{1, 2, 3}
+	 nummies4 = append(nummies4, 5);
+	 fmt.Println(nummies4);		// [1 2 3 5]
+
+	 //we can extract range from the slice
+	 fmt.Println(nummies4[1:3])   //exclusive of index 3
+	 fmt.Println(nummies4[:3])    //exclusive of index 3
+	 fmt.Println(nummies4[1:])   //inclusive of index 3
+
+	 //Slice using 'make'
+	nummies5 := make([]int, 2);  //create a slice of length 2
+	nummies5[0] = 1;
+	nummies5[1] = 2;
+	// nummies5[2] = 3; //this will throw error
+
+	//but we can use all the slice methods
+	fmt.Println(len(nummies5));  //2
+	fmt.Println(append(nummies5, 6));       // [1 2 6]
+
+
 }
 
 type rect struct {
