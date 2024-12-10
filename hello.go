@@ -336,6 +336,22 @@ func main() {
 	fmt.Println(len(nummies5));  //2
 	fmt.Println(append(nummies5, 6));       // [1 2 6]
 
+	//append a slice to a slice
+	nummies6 := []int{1, 2, 3}
+	nummies7 := []int{4, 5}
+	nummies6 = append(nummies6, nummies7...)  //append a slice to a slice
+	fmt.Println(nummies6)
+
+
+	//Map
+	//---------------------------------------------------------------------------------------------
+	/*
+	 mapName := map[keyType]valueType{key: value}
+	*/
+	var nummies8 = map[string]int{"one": 1, "two": 2}
+	fmt.Println(nummies8)
+	fmt.Println(nummies8["one"]);
+
 
 }
 
