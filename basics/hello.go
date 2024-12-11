@@ -341,6 +341,7 @@ func main() {
 	nummies7 := []int{4, 5}
 	nummies6 = append(nummies6, nummies7...)  //append a slice to a slice
 	fmt.Println(nummies6)
+	fmt.Println(len(nummies6))
 
 
 	//Map
@@ -352,6 +353,28 @@ func main() {
 	fmt.Println(nummies8)
 	fmt.Println(nummies8["one"]);
 
+	//map using make 
+	nummies9 := make(map[string]int);
+	nummies9["one"] = 1;
+	nummies9["two"] = 2;
+	fmt.Println(nummies9) 
+	fmt.Println(len(nummies9)) 
+
+	//get value from map
+	var oneVal = nummies9["one"]; 
+	fmt.Println(oneVal);
+
+	//check if value exists
+	val, ok := nummies9["one"];
+	if ok { //if value exists then ok will be true
+		fmt.Println(val);
+	}
+
+	//delete value from map
+	delete(nummies9, "one");
+	fmt.Println(nummies9) 
+ 
+	//Imp:- if we try to get the element which is not present in the map then it will return zero value
 
 }
 
